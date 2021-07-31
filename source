@@ -1,0 +1,768 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Dropdown = Instance.new("Frame")
+local Menu = Instance.new("Frame")
+local UI = Instance.new("UIListLayout")
+local WoodButton = Instance.new("TextButton")
+local CursedButton = Instance.new("TextButton")
+local BerryButton = Instance.new("TextButton")
+local CoalButton = Instance.new("TextButton")
+local IronButton = Instance.new("TextButton")
+local GoldButton = Instance.new("TextButton")
+local PalloniumButton = Instance.new("TextButton")
+local PalladiumButton = Instance.new("TextButton")
+local TelluriumButton = Instance.new("TextButton")
+local ClothButton = Instance.new("TextButton")
+local Selection = Instance.new("TextButton")
+local DropDown2 = Instance.new("Frame")
+local Menu_2 = Instance.new("Frame")
+local UI_2 = Instance.new("UIListLayout")
+local UnlockAllButton = Instance.new("TextButton")
+local CollectAllButton = Instance.new("TextButton")
+local Selection_2 = Instance.new("TextButton")
+ScreenGui.Parent = game.CoreGui
+collectall = false
+
+local children = game.workspace.MapItems:GetChildren()
+
+for i = 1, #children do
+    directory = children[i].Name
+    if _LT == nil then
+        _LT = 0
+    end
+    if directory == "Large Tree" then
+        _LT = _LT + 1
+        local path = game.workspace.MapItems["Large Tree"]
+        path.Name = "LT" .. _LT
+    end
+end
+
+local children = game.workspace.MapItems:GetChildren()
+
+for i = 1, #children do
+    directory = children[i].Name
+    if _BB == nil then
+        _BB = 0
+    end
+    if directory == "Berry Bush" then
+        _BB = _BB + 1
+        local path = game.workspace.MapItems["Berry Bush"]
+        path.Name = "BB" .. _BB
+    end
+end
+
+local children = game.workspace.MapItems:GetChildren()
+
+for i = 1, #children do
+    directory = children[i].Name
+    if _CP == nil then
+        _CP = 0
+    end
+    if directory == "Cotton Plant" then
+        _CP = _CP + 1
+        local path = game.workspace.MapItems["Cotton Plant"]
+        path.Name = "CP" .. _CP
+    end
+end
+
+local children = game.workspace.MapItems:GetChildren()
+
+for i = 1, #children do
+    directory = children[i].Name
+    if _OreC == nil then
+        _OreC = 0
+    end
+    if _OreI == nil then
+        _OreI = 0
+    end
+    if _OreG == nil then
+        _OreG = 0
+    end
+    if _OrePN == nil then
+        _OrePN = 0
+    end
+    if _OrePD == nil then
+        _OrePD = 0
+    end
+    if _OreT == nil then
+        _OreT = 0
+    end
+    if _Orenil == nil then
+        _Orenil = 0
+    end
+    if directory == "Ore" then
+        if game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Coal") then
+            _OreC = _OreC + 1
+            print("Coal" .. _OreC)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OreC" .. _OreC
+
+        elseif game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Iron") then
+            _OreI = _OreI + 1
+            print("Iron" .. _OreI)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OreI" .. _OreI
+
+        elseif game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Gold") then
+            _OreG = _OreG + 1
+            print("Gold" .. _OreG)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OreG" .. _OreG
+
+        elseif game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Polonium") then
+            _OrePN = _OrePN + 1
+            print("Palonium".. _OrePN)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OrePN" .. _OrePN
+
+        elseif game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Palladium") then
+            _OrePD = _OrePD + 1
+            print("Palladium".. _OrePD)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OrePD" .. _OrePD
+
+        elseif game:GetService("Workspace").MapItems.Ore.Inventory:FindFirstChild("Tellurium") then
+            _OreT = _OreT + 1
+            print("Tellurium" .. _OreT)
+            local path = game.workspace.MapItems["Ore"]
+            path.Name = "OreT" .. _OreT
+        else
+            print("Empty")
+        end
+    end
+end
+
+local children = game.workspace.MapItems:GetChildren()
+
+for i = 1, #children do
+    directory = children[i].Name
+    if _SOreC == nil then
+        _SOreC = 0
+    end
+    if _SOreI == nil then
+        _SOreI = 0
+    end
+    if _SOreG == nil then
+        _SOreG = 0
+    end
+    if _SOrePN == nil then
+        _SOrePN = 0
+    end
+    if _SOrePD == nil then
+        _SOrePD = 0
+    end
+    if _SOreT == nil then
+        _SOreT = 0
+    end
+    if directory == "Super Ore" then
+        if game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Coal") then
+            _SOreC = _SOreC + 1
+            print("SCoal" .. _SOreC)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "SOreC" .. _SOreC
+        elseif game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Iron") then
+            _SOreI = _SOreI + 1
+            print("SIron" .. _SOreI)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "SOreI" .. _SOreI
+        elseif game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Gold") then
+            _SOreG = _SOreG + 1
+            print("SGold" .. _SOreG)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "SOreG" .. _SOreG
+        elseif game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Polonium") then
+            _SOrePN = _SOrePN + 1
+            print("SPalonium".. _SOrePN)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "OrePN" .. _SOrePN
+        elseif game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Palladium") then
+            _SOrePD = _SOrePD + 1
+            print("SPalladium".. _SOrePD)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "SOrePD" .. _SOrePD
+        elseif game:GetService("Workspace").MapItems["Super Ore"].Inventory:FindFirstChild("Tellurium") then
+            _SOreT = _SOreT + 1
+            print("STellurium" .. _SOreT)
+            local path = game.workspace.MapItems["Super Ore"]
+            path.Name = "SOreT" .. _SOreT
+        else
+            print("None")
+        end
+    end
+end
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source', true))()
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 3
+Main.Position = UDim2.new(0.25, 0, 0.25, 0)
+Main.Size = UDim2.new(0, 500, 0, 400)
+Main.Active = true
+Main.Draggable = true
+
+Dropdown.Name = "Dropdown"
+Dropdown.Parent = Main
+Dropdown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Dropdown.BackgroundTransparency = 0.600
+Dropdown.BorderSizePixel = 0
+Dropdown.Position = UDim2.new(0.05, 0, 0.05, 0)
+Dropdown.Size = UDim2.new(0.3, 0, 0.1, 0)
+
+Menu.Name = "Menu"
+Menu.Parent = Dropdown
+Menu.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Menu.BackgroundTransparency = 0.600
+Menu.Position = UDim2.new(0, 0, 1, 0)
+Menu.Size = UDim2.new(1, 0, 6.7, 0)
+
+UI.Name = "UI"
+UI.Parent = Menu
+UI.SortOrder = Enum.SortOrder.LayoutOrder
+
+WoodButton.Name = "WoodButton"
+WoodButton.Parent = Menu
+WoodButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+WoodButton.BackgroundTransparency = 1.000
+WoodButton.BorderSizePixel = 0
+WoodButton.LayoutOrder = 1
+WoodButton.Size = UDim2.new(1, 0, 0.1, 0)
+WoodButton.Font = Enum.Font.SciFi
+WoodButton.Text = "Wood"
+WoodButton.TextColor3 = Color3.fromRGB(160, 95, 53)
+WoodButton.TextSize = 14.000
+WoodButton.TextWrapped = true
+
+CursedButton.Name = "CursedButton"
+CursedButton.Parent = Menu
+CursedButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CursedButton.BackgroundTransparency = 1.000
+CursedButton.BorderSizePixel = 0
+CursedButton.LayoutOrder = 2
+CursedButton.Position = UDim2.new(0, 0, 0.1, 0)
+CursedButton.Size = UDim2.new(1, 0, 0.1, 0)
+CursedButton.Font = Enum.Font.SciFi
+CursedButton.Text = "Cursed"
+CursedButton.TextColor3 = Color3.fromRGB(226, 204, 31)
+CursedButton.TextSize = 14.000
+CursedButton.TextWrapped = true
+
+BerryButton.Name = "BerryButton"
+BerryButton.Parent = Menu
+BerryButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BerryButton.BackgroundTransparency = 1.000
+BerryButton.BorderSizePixel = 0
+BerryButton.LayoutOrder = 4
+BerryButton.Position = UDim2.new(0, 0, 0.325249106, 0)
+BerryButton.Size = UDim2.new(1, 0, 0.1, 0)
+BerryButton.Font = Enum.Font.SciFi
+BerryButton.Text = "Berries"
+BerryButton.TextColor3 = Color3.fromRGB(160, 6, 160)
+BerryButton.TextSize = 14.000
+BerryButton.TextWrapped = true
+
+CoalButton.Name = "Button"
+CoalButton.Parent = Menu
+CoalButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CoalButton.BackgroundTransparency = 1.000
+CoalButton.BorderSizePixel = 0
+CoalButton.LayoutOrder = 4
+CoalButton.Position = UDim2.new(0, 0, 0.45, 0)
+CoalButton.Size = UDim2.new(1, 0, 0.1, 0)
+CoalButton.Font = Enum.Font.SciFi
+CoalButton.Text = "Coal"
+CoalButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CoalButton.TextSize = 14.000
+CoalButton.TextWrapped = true
+
+IronButton.Name = "Button"
+IronButton.Parent = Menu
+IronButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IronButton.BackgroundTransparency = 1.000
+IronButton.BorderSizePixel = 0
+IronButton.LayoutOrder = 5
+IronButton.Position = UDim2.new(0, 0, 0.57574755, 0)
+IronButton.Size = UDim2.new(1, 0, 0.1, 0)
+IronButton.Font = Enum.Font.SciFi
+IronButton.Text = "Iron"
+IronButton.TextColor3 = Color3.fromRGB(162, 155, 155)
+IronButton.TextSize = 14.000
+IronButton.TextWrapped = true
+
+GoldButton.Name = "Button"
+GoldButton.Parent = Menu
+GoldButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GoldButton.BackgroundTransparency = 1.000
+GoldButton.BorderSizePixel = 0
+GoldButton.LayoutOrder = 6
+GoldButton.Position = UDim2.new(0, 0, 0.700996757, 0)
+GoldButton.Size = UDim2.new(1, 0, 0.1, 0)
+GoldButton.Font = Enum.Font.SciFi
+GoldButton.Text = "Gold"
+GoldButton.TextColor3 = Color3.fromRGB(255, 255, 0)
+GoldButton.TextSize = 14.000
+GoldButton.TextWrapped = true
+
+PalloniumButton.Name = "Button"
+PalloniumButton.Parent = Menu
+PalloniumButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PalloniumButton.BackgroundTransparency = 1.000
+PalloniumButton.BorderSizePixel = 0
+PalloniumButton.LayoutOrder = 7
+PalloniumButton.Position = UDim2.new(0, 0, 0.700996757, 0)
+PalloniumButton.Size = UDim2.new(1, 0, 0.1, 0)
+PalloniumButton.Font = Enum.Font.SciFi
+PalloniumButton.Text = "Pallonium"
+PalloniumButton.TextColor3 = Color3.fromRGB(0, 255, 255)
+PalloniumButton.TextSize = 14.000
+PalloniumButton.TextWrapped = true
+
+PalladiumButton.Name = "Button"
+PalladiumButton.Parent = Menu
+PalladiumButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PalladiumButton.BackgroundTransparency = 1.000
+PalladiumButton.BorderSizePixel = 0
+PalladiumButton.LayoutOrder = 8
+PalladiumButton.Position = UDim2.new(0, 0, 0.601328969, 0)
+PalladiumButton.Size = UDim2.new(1, 0, 0.1, 0)
+PalladiumButton.Font = Enum.Font.SciFi
+PalladiumButton.Text = "Palladium"
+PalladiumButton.TextColor3 = Color3.fromRGB(120, 11, 130)
+PalladiumButton.TextSize = 14.000
+PalladiumButton.TextWrapped = true
+
+TelluriumButton.Name = "Button"
+TelluriumButton.Parent = Menu
+TelluriumButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TelluriumButton.BackgroundTransparency = 1.000
+TelluriumButton.BorderSizePixel = 0
+TelluriumButton.LayoutOrder = 9
+TelluriumButton.Position = UDim2.new(0, 0, 0.700996757, 0)
+TelluriumButton.Size = UDim2.new(1, 0, 0.1, 0)
+TelluriumButton.Font = Enum.Font.SciFi
+TelluriumButton.Text = "Tellurium"
+TelluriumButton.TextColor3 = Color3.fromRGB(170, 255, 0)
+TelluriumButton.TextSize = 14.000
+TelluriumButton.TextWrapped = true
+
+ClothButton.Name = "ClothButton"
+ClothButton.Parent = Menu
+ClothButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClothButton.BackgroundTransparency = 1.000
+ClothButton.BorderSizePixel = 0
+ClothButton.LayoutOrder = 3
+ClothButton.Position = UDim2.new(0, 0, -0.10132879, 0)
+ClothButton.Size = UDim2.new(1, 0, 0.1, 0)
+ClothButton.Font = Enum.Font.SciFi
+ClothButton.Text = "Cloth"
+ClothButton.TextColor3 = Color3.fromRGB(160, 95, 53)
+ClothButton.TextSize = 14.000
+ClothButton.TextWrapped = true
+
+Selection.Name = "Selection"
+Selection.Parent = Dropdown
+Selection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Selection.BackgroundTransparency = 1.000
+Selection.Size = UDim2.new(1, 0, 1, 0)
+Selection.Font = Enum.Font.Oswald
+Selection.Text = "Farming"
+Selection.TextColor3 = Color3.fromRGB(255, 255, 255)
+Selection.TextScaled = false
+Selection.TextSize = 32
+Selection.TextWrapped = true
+
+DropDown2.Name = "DropDown2"
+DropDown2.Parent = Main
+DropDown2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DropDown2.BackgroundTransparency = 0.600
+DropDown2.Position = UDim2.new(0.65, 0, 0.05, 0)
+DropDown2.Size = UDim2.new(0.3, 0, .1, 0)
+
+Menu_2.Name = "Menu"
+Menu_2.Parent = DropDown2
+Menu_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Menu_2.BackgroundTransparency = 0.600
+Menu_2.BorderSizePixel = 0
+Menu_2.Position = UDim2.new(0, 0, 1, 0)
+Menu_2.Size = UDim2.new(1, 0, 6.6888876, 0)
+
+UI_2.Name = "UI"
+UI_2.Parent = Menu_2
+UI_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+UnlockAllButton.Name = "UnlockAllButton"
+UnlockAllButton.Parent = Menu_2
+UnlockAllButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+UnlockAllButton.BackgroundTransparency = 1
+UnlockAllButton.LayoutOrder = 1
+UnlockAllButton.Position = UDim2.new(0, 0, 0, 0)
+UnlockAllButton.Size = UDim2.new(1, 0, 0.1, 0)
+UnlockAllButton.Font = Enum.Font.SciFi
+UnlockAllButton.Text = "Unlock All"
+UnlockAllButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnlockAllButton.TextSize = 14.000
+
+CollectAllButton.Name = "CollectAllButton"
+CollectAllButton.Parent = Menu_2
+CollectAllButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CollectAllButton.BackgroundTransparency = 1
+CollectAllButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CollectAllButton.LayoutOrder = 2
+CollectAllButton.Position = UDim2.new(0, 0, 0, 0)
+CollectAllButton.Size = UDim2.new(1, 0, 0.1, 0)
+CollectAllButton.Font = Enum.Font.SciFi
+CollectAllButton.Text = "Collect All"
+CollectAllButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CollectAllButton.TextSize = 14.000
+
+Selection_2.Name = "Selection"
+Selection_2.Parent = DropDown2
+Selection_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Selection_2.BackgroundTransparency = 1.000
+Selection_2.Size = UDim2.new(1, 0, 1, 0)
+Selection_2.Font = Enum.Font.Oswald
+Selection_2.Text = "Misc :)"
+Selection_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Selection_2.TextSize = 32.000
+Selection_2.TextWrapped = true
+
+WoodButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 15 do
+        i = i
+        path = game:GetService("Workspace").MapItems["LT" .. i].Color2.Color.G
+        if game:GetService("Workspace").MapItems["LT" .. i].Inventory:FindFirstChild("Wood") then
+            if string.find(path, "0.3") then
+                path = game:GetService("Workspace").MapItems["LT" .. i].Color2.Position
+                humanoid.CFrame = CFrame.new(path)
+                wait(5)
+            end
+        end
+        i = i + 1
+        wait(0.01)
+    end
+    humanoid.CFrame = CFrame.new(playerstart)
+    while game:GetService("Workspace"):FindFirstChild("Wood") ~= nil do
+        local A_1 = game:GetService("Workspace").Wood
+        local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+        Event:FireServer(A_1)
+        wait(0.01)
+    end
+end)
+
+CursedButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 190 do
+        i = i
+        path = game:GetService("Workspace").MapItems["LT" .. i].Color2.Color.G
+        if game:GetService("Workspace").MapItems["LT" .. i].Inventory:FindFirstChild("Cursed Wood") then
+            if string.find(path, "0.51764") then
+                path = game:GetService("Workspace").MapItems["LT" .. i].Color2.Position
+                humanoid.CFrame = CFrame.new(path)
+                wait(5)
+            end
+        end
+        i = i + 1
+        wait(0.01)
+    end
+    humanoid.CFrame = CFrame.new(playerstart)
+    while game:GetService("Workspace"):FindFirstChild("Cursed Wood") ~= nil do
+        local A_1 = game:GetService("Workspace")["Cursed Wood"]
+        local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+        Event:FireServer(A_1)
+        wait(0.01)
+    end
+end)
+
+ClothButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 1 do
+        if game:GetService("Workspace").MapItems["CP" .. i].Inventory:FindFirstChild("Cloth") then
+            path = game:GetService("Workspace").MapItems["CP" .. i].Part.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(0.5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Cloth") ~= nil do
+    local A_1 = game:GetService("Workspace").Cloth
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+end
+end)
+
+BerryButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 60 do
+        if game:GetService("Workspace").MapItems["BB" .. i].Inventory:FindFirstChild("Purple Berry") then
+            path = game:GetService("Workspace").MapItems["BB" .. i].Part.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(0.5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+end)
+
+CoalButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 10 do
+        if game:GetService("Workspace").MapItems["OreC" .. i].Inventory:FindFirstChild("Coal") then
+            path = game:GetService("Workspace").MapItems["OreC" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Coal") ~= nil do
+    local A_1 = game:GetService("Workspace").Coal
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+end
+end)
+
+IronButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 10 do
+        if game:GetService("Workspace").MapItems["OreI" .. i].Inventory:FindFirstChild("Iron") then
+            path = game:GetService("Workspace").MapItems["OreI" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Iron") ~= nil do
+    local A_1 = game:GetService("Workspace").Iron
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    print(A_1)
+    wait(0.01)
+    end
+end)
+
+GoldButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 10 do
+        if game:GetService("Workspace").MapItems["OreG" .. i].Inventory:FindFirstChild("Gold") then
+            path = game:GetService("Workspace").MapItems["OreG" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Gold") ~= nil do
+    local A_1 = game:GetService("Workspace").Gold
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+end
+end)
+
+PalloniumButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 5 do
+        if game:GetService("Workspace").MapItems["OrePN" .. i].Inventory:FindFirstChild("Polonium") then
+            path = game:GetService("Workspace").MapItems["OrePN" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Polonium") ~= nil do
+    local A_1 = game:GetService("Workspace").Polonium
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+end
+end)
+
+PalladiumButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 5 do
+        if game:GetService("Workspace").MapItems["OrePD" .. i].Inventory:FindFirstChild("Palladium") then
+            path = game:GetService("Workspace").MapItems["OrePD" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Palladium") ~= nil do
+    local A_1 = game:GetService("Workspace").Palladium
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+    end
+end)
+
+TelluriumButton.MouseButton1Down:connect(function()
+    local playerstart = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character.HumanoidRootPart
+    i = 1
+    while i <= 5 do
+        if game:GetService("Workspace").MapItems["OreT" .. i].Inventory:FindFirstChild("Tellurium") then
+            path = game:GetService("Workspace").MapItems["OreT" .. i].Color.Position
+            humanoid.CFrame = CFrame.new(path)
+            wait(5)
+        end
+    i = i + 1
+    wait(0.01)
+    end
+humanoid.CFrame = CFrame.new(playerstart)
+while game:GetService("Workspace"):FindFirstChild("Tellurium") ~= nil do
+    local A_1 = game:GetService("Workspace").Tellurium
+    local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+    Event:FireServer(A_1)
+    wait(0.01)
+end
+end)
+
+UnlockAllButton.MouseButton1Down:connect(function()
+    local children = game.Players.LocalPlayer.Recipes:GetChildren()
+    for i = 1, #children do
+        local directory = children[i].Name
+        local path = game:GetService("Players").LocalPlayer.Recipes[directory]
+        path.Value = true
+    end
+end)
+
+CollectAllButton.MouseButton1Down:connect(function()
+    collectall = not collectall
+    while collectall == true do
+        if game:GetService("Workspace"):FindFirstChild("Wood") ~= nil then
+            local A_1 = game:GetService("Workspace").Wood
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Iron") ~= nil then
+            local A_1 = game:GetService("Workspace").Iron
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Cursed Wood") ~= nil then
+            local A_1 = game:GetService("Workspace")["Cursed Wood"]
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Cloth") ~= nil then
+            local A_1 = game:GetService("Workspace").Cloth
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Steel") ~= nil then
+            local A_1 = game:GetService("Workspace").Steel
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Coal") ~= nil then
+            local A_1 = game:GetService("Workspace").Coal
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Palladium") ~= nil then
+            local A_1 = game:GetService("Workspace").Palladium
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Gold") ~= nil then
+            local A_1 = game:GetService("Workspace").Gold
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Block and Tackle") ~= nil then
+            local A_1 = game:GetService("Workspace")["Block and Tackle"]
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Tellurium") ~= nil then
+            local A_1 = game:GetService("Workspace").Tellurium
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Ruby") ~= nil then
+            local A_1 = game:GetService("Workspace").Ruby
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Diamond") ~= nil then
+            local A_1 = game:GetService("Workspace").Diamond
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Explosive Cannon") ~= nil then
+            local A_1 = game:GetService("Workspace")["Explosive Cannon"]
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Ghostly Block") ~= nil then
+            local A_1 = game:GetService("Workspace")["Ghostly Block"]
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Ghostly Sail") ~= nil then
+            local A_1 = game:GetService("Workspace")["Ghostly Sail"]
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        if game:GetService("Workspace"):FindFirstChild("Diamond") ~= nil then
+            local A_1 = game:GetService("Workspace").Diamond
+            local Event = game:GetService("ReplicatedStorage").Remotes.Interact.PickUp
+            Event:FireServer(A_1)
+        end
+        wait(0.01)
+    end
+end)
+
+
+
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.Insert then
+        game:GetService("CoreGui")
+        ScreenGui.Main.Visible = not ScreenGui.Main.Visible
+    end
+end)
